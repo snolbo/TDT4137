@@ -107,18 +107,22 @@ weights = 0
 for val in range(interval[0], interval[1] +1): # For every val in interval
     max_membership = 0
     for act_index in range (0, len(action)): # Find max membership ( OR SHOULD IT BE SUMMATED??)
-        max_membership = max(max_membership, (action[act_index].membership_of(val) > 0 ) *action_membership[act_index])
-    COG += val * max_membership
+        if action[act_index].membership_of(val) > 0: # This value has membership in the set
+            max_membership = max(max_membership, action_membership[act_index]) #decide from which set is has meximum membership
+    # add value to weighted sum and sum of weights
+    COG += val*max_membership
     weights += max_membership
-decision = COG / weights
+# Calculate actual COG
+COG = COG / weights
 
-# Finding memberships for action (result)
+# Find which set this COG has memberships in
 decided_action = []
 for act in action:
-    decided_action.append(act.membership_of(decision))
+    decided_action.append(act.membership_of(COG))
+
 
 # Printing results
 print()
 print("COG: " + str(decision))
-print("Chosen action: " + action_string_representation[decided_action.index(max(decided_action))] )
+print("Chosen action: " + action_string_representation[decided_action.index(max(decided_action))]) # max of memberships is decision
 
