@@ -80,7 +80,6 @@ print("theta3: " + str(theta3))
 print("theta4: " + str(theta5))
 print("theta5: " + str(theta5))
 print("theta6: " + str(theta6))
-print()
 
 
 # # FORWARD FEEDING

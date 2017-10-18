@@ -36,8 +36,9 @@ ax.scatter(input1, input2)
 line1, = ax.plot(x, y, 'b-')
 
 iterations = 0
+convergence = 10
 print("Starting w : " + str(w) + " Starting treshold : " + str(thres))
-while streak < 20 and iterations < 10000:
+while streak < convergence and iterations < 1000:
     # Find input
     c = random.randint(0, 3)
     in1 = input1[c]
@@ -50,7 +51,7 @@ while streak < 20 and iterations < 10000:
     sum -= thres
 
     #Evaluate results
-    yd = in1 or in2
+    yd = in1 and in2
     y = sum > 0
     error = yd - y
 
@@ -64,6 +65,7 @@ while streak < 20 and iterations < 10000:
     w[0] = w[0] + alpha * in1 * error
     w[1] = w[1] + alpha * in2 * error
     thres = thres + alpha * (-1) * error
+    print("Iteration " + str(iterations+1) + ": w: " + str(w) + "threshold: " + str(thres))
 
     line1.set_ydata([-((w[0] / w[1]) * jj - (thres / w[1])) for jj in x])
     fig.canvas.draw()
@@ -72,9 +74,6 @@ while streak < 20 and iterations < 10000:
     # Progress print
     iterations += 1
 
-
-
-print()
-print("Trained iterations : " + str(iterations - 20) + " Before convergence")
+print("Trained iterations : " + str(iterations - convergence) + " Before convergence")
 print("Ending w : " + str(w) + " Ending treshold : " + str(thres))
 
