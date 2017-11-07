@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$USER_HOME$/AscendTest/.idea/AscendTest.iml" filepath="$USER_HOME$/AscendTest/.idea/AscendTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../TDT4113-Programming-Project/.idea/TDT4113-Programming-Project.iml" filepath="$PROJECT_DIR$/../TDT4113-Programming-Project/.idea/TDT4113-Programming-Project.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/TDT4137.iml" filepath="$PROJECT_DIR$/.idea/TDT4137.iml" />
       <module fileurl="file://$PROJECT_DIR$/../TDT4195Gloom/.idea/TDT4195Gloom.iml" filepath="$PROJECT_DIR$/../TDT4195Gloom/.idea/TDT4195Gloom.iml" />
     </modules>

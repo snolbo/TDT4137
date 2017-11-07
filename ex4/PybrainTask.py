@@ -34,7 +34,7 @@ for i in range(0,5):
         replicate_train_data.append(val)
 # Shuffle data
 shuffle(replicate_train_data)
-# Create other test data
+# Create other test.tiff data
 test_data_untrained = [x for x in range(10,20)]
 test_data_negative = [x for x in range(-10, 0)]
 
@@ -50,15 +50,15 @@ for nodes in range(8, 0, -1):
     errors = trainer.trainUntilConvergence(verbose=False, validationProportion=0.15, maxEpochs=1000, continueEpochs=10)
     # pesos_conexiones(net)
 
-    # Get results from different test sets
+    # Get results from different test.tiff sets
     res1 = [net.activate([val])[0] for val in replicate_train_data]
     res2 = [net.activate([val])[0] for val in test_data_untrained]
     res3 = [net.activate([val])[0] for val in test_data_negative]
-    print "test set: " + str(replicate_train_data) + ". Results: " + str(res1)
-    print "test set: " + str(test_data_untrained) + ". Results: " + str(res2)
-    print "test set: " + str(test_data_negative) + ". Results: " + str(res3)
+    print "test.tiff set: " + str(replicate_train_data) + ". Results: " + str(res1)
+    print "test.tiff set: " + str(test_data_untrained) + ". Results: " + str(res2)
+    print "test.tiff set: " + str(test_data_negative) + ". Results: " + str(res3)
 
-    # Find the error in the result for when using train-data as test-data
+    # Find the error in the result for when using train-data as test.tiff-data
     error = 0
     for i in range(0,len(replicate_train_data)):
         error += pow(res1[i]-replicate_train_data[i], 2)

@@ -4,6 +4,8 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="jdk" jdkName="Python 3.6.2 (~/anaconda3/envs/py36/bin/python)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="TDT4113-Programming-Project" />
+    <orderEntry type="module" module-name="AscendTest" />
     <orderEntry type="module" module-name="TDT4195Gloom" />
   </component>
   <component name="TestRunnerService">
